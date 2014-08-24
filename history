@@ -121,3 +121,11 @@
 : 1408896345:0;git commit -m "first commit"
 : 1408896363:0;git commit -m "second commit"
 : 1408896383:0;git add *
+: 1408896394:0;git commit -m "first commit"
+: 1408896404:0;git push origin master
+: 1408896674:0;cat .gitignore
+: 1408896678:0;ls
+: 1408896930:0;git rm history
+: 1408896943:0;git status
+: 1408896970:0;git status -a -m "sav"
+: 1408896979:0;git commit -a -m "sav"
