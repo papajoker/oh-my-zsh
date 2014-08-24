@@ -112,3 +112,12 @@
 : 1408896011:0;gir status
 : 1408896015:0;git status
 : 1408896043:0;git add history
+: 1408896052:0;git add .git*
+: 1408896059:0;git commit -m "first commit"
+: 1408896065:0;git status
+: 1408896099:0;git remote add origin https://github.com/papajoker/oh-my-zsh.git
+: 1408896120:0;git push origin master
+: 1408896336:0;git status
+: 1408896345:0;git commit -m "first commit"
+: 1408896363:0;git commit -m "second commit"
+: 1408896383:0;git add *
