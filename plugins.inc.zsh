@@ -80,14 +80,14 @@ function jp() {
  esac
 }
 
-monAccueil()
+function monAccueil()
 {
 screenfetch
 echo -e "\e[00;32m $(lsb_release -ds)\e[00;33m $(lsb_release -rs)\e[00m"
 echo -e "\e[00;32m $(uname -n) \e[00;33m $(uname -o)\e[00m"  
 echo -e "\e[00;31m$(df -h -t ext4 |grep ^/) \e[00m"
 #lsb_release -ds|toilet -f  smblock -F metal;
-espeak -s 160 -v fr+12 "yo patrick "
+#espeak -s 160 -v fr+12 "yo patrick "
 }
 
 
