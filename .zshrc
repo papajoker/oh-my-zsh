@@ -5,7 +5,7 @@ ZSH=/usr/share/oh-my-zsh/
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="papajoker"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,6 +46,9 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git archlinux systemd history sudo colored-man cp docker)
+
+# passage en 256 couleurs spectrum_ls pour controle
+[[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
 source $ZSH/oh-my-zsh.sh
 
