@@ -142,7 +142,7 @@ prompt_hg() {
 get_files() {
     nb=$(ls -AGU --width=1 |wc -l )
     #let "nb-=1"
-    [[ $nb -ne 0 ]] && echo -n " ($nb)"
+    [[ $nb -gt 0 ]] && echo -n " ($nb)"
 }
 
 # Dir: current working directory
