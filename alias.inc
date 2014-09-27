@@ -16,6 +16,10 @@ alias ippublique='curl ipecho.net/plain'
 alias info='inxi -Fxz'
 alias wedit="subl3"
 
+alias "-"='cd -'
+alias ".."='cd ..'
+alias "cd.."='cd ..'
+
 alias pac-info_Si='yaourt -Si'
 alias pac-info-local_Qi='pacman -Qi'
 alias pac-info-files_Ql='pacman -Ql'
