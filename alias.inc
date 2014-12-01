@@ -16,7 +16,7 @@ alias ippublique='curl ipecho.net/plain'
 alias info='inxi -Fxz'
 alias wedit="subl3"
 
-alias "-"='cd -'
+#alias "-"='cd -'
 alias ".."='cd ..'
 alias "cd.."='cd ..'
 
