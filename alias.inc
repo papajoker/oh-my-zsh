@@ -39,7 +39,13 @@ alias pac-cache-erase_Scc='echo "Suppression complète du cache pacman";sudo pac
 alias pac-cherche-pacnew='echo "Recherche des fichiers de configuration a gérer manuellement";sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)"|grep "pac" 2> /dev/null'
 
 alias sysd-journal-services-failes='systemctl --state=failed'
+alias sysd-journal-erreurs='echo "journalctl -r -p err";journalctl -r -p err'
 alias sysd-journal-depuis-le-boot='journalctl -b -r |less'
 alias sysd-analyze-blame='systemd-analyze blame'
+alias sysd-timers='echo "systemctl list-timers"; systemctl list-timers'
 alias sysd-poweroff='echo "Eteindre la machine";sudo systemctl poweroff'
+
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias pacman-mirrors='sudo reflector --verbose -l 30 -p http --sort rate --threads 1 --save /etc/pacman.d/mirrorlist'
+
 
