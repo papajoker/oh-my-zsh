@@ -45,8 +45,20 @@ function rmE(){
 
 function google() { xdg-open "http://www.google.fr/search?q=$*" ; }
 
-#recherche dans rep courant
-function ff() { find . -type f -iname '*'$@'*' -ls ; }
+#recherche dans rep courant par nom
+function ff() 
+{ 
+	rep=${2:='.'}
+	echo -e "params: file_name_to_find\t [directory]\recherche de \$1 dans rep courant ou \$2'$2'\nfind $rep -type f -iname '*'$1'*' -exec ls -l {} \;\n--------------------------------------------"
+	find $rep -type f -iname '*'$1'*' -exec ls -l --color {} \; 
+}
+#recherche dans rep courant par contenu
+function fff() 
+{ 
+	rep=${3:='.'}
+	echo -e "params: file_name\t string_to_find\t [directory]\nrecherche de \$2 dans les fichiers \$1 dans rep courant ou \$3'$3'\nfind $rep -type f -iname '*'$1'*' -readable | xargs grep -sl "$2" \n------------------------------------------------------------------"
+	find $rep -type f -iname '*'$1'*' -readable -exec grep -sl "$2" {} \;
+}
 
 # ex - archive extractor
 # usage: ex <file>

@@ -54,13 +54,14 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# export LANG=fr_FR.UTF-8
 
 # Preferred editor for local and remote sessions
+export EDITOR='nano'
 # if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nano'
 # else
@@ -81,7 +82,7 @@ HISTSIZE=1000
 export SAVEHIST=1000
 HISTFILESIZE=${HISTSIZE}
 setopt share_history 
-
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 ##################################################################### Completion
 # If this option is set completions are shown only if the completions don't have
