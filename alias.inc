@@ -45,6 +45,8 @@ alias sysd-analyze-blame='systemd-analyze blame'
 alias sysd-timers='echo "systemctl list-timers"; systemctl list-timers'
 alias sysd-poweroff='echo "Eteindre la machine";sudo systemctl poweroff'
 
+alias git-history='git log --decorate --oneline --graph --all --date=short --pretty=format:"%C(auto)%d%Creset %C(auto)%h%Creset - %C(cyan)%an%Creset %Cgreen(%ad)%Creset : %s" '
+
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias pacman-mirrors='sudo reflector --verbose -l 30 -p http --sort rate --threads 1 --save /etc/pacman.d/mirrorlist'
 
