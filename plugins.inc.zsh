@@ -67,7 +67,7 @@ function fff()
 		echo "Erreur: Pas de paramètres"
 		return 127
 	fi
-	find $rep -type f -iname "*$1*" -readable -exec grep -sl "$2" {} \;
+	find $rep -type f -iname "*$1*" -readable -exec grep -sli "$2" {} \;
 }
 
 # ex - archive extractor
