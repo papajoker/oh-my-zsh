@@ -49,15 +49,25 @@ function google() { xdg-open "http://www.google.fr/search?q=$*" ; }
 function ff() 
 { 
 	rep=${2:='.'}
-	echo -e "params: file_name_to_find\t [directory]\recherche de \$1 dans rep courant ou \$2'$2'\nfind $rep -type f -iname '*'$1'*' -exec ls -l {} \;\n--------------------------------------------"
+	echo -e "params: 'nom_fichier_a_rechercher'\t [directory]"
+	echo -e "echerche de \$1 dans rep courant ou \$2'$2'\nfind $rep -type f -iname '*'$1'*' -exec ls -l {} \;\n--------------------------------------------"
+	if [ -z "$1" ]; then
+		echo "Erreur: Pas de paramètres"
+		return 127
+	fi
 	find $rep -type f -iname '*'$1'*' -exec ls -l --color {} \; 
 }
 #recherche dans rep courant par contenu
 function fff() 
 { 
 	rep=${3:='.'}
-	echo -e "params: file_name\t string_to_find\t [directory]\nrecherche de \$2 dans les fichiers \$1 dans rep courant ou \$3'$3'\nfind $rep -type f -iname '*'$1'*' -readable | xargs grep -sl "$2" \n------------------------------------------------------------------"
-	find $rep -type f -iname '*'$1'*' -readable -exec grep -sl "$2" {} \;
+	echo -e "params: 'nom_fichier_a_rechercher'\t 'chaine_a_rechercher'\t ['repertoire']"
+	echo -e "recherche de \$2 dans les fichiers \$1 dans rep courant ou \$3'$3'\nfind $rep -type f -iname \"*$1*\" -readable | xargs grep -sl \"$2\" \n------------------------------------------------------------------"
+	if [ -z "$1" ]; then
+		echo "Erreur: Pas de paramètres"
+		return 127
+	fi
+	find $rep -type f -iname "*$1*" -readable -exec grep -sl "$2" {} \;
 }
 
 # ex - archive extractor
@@ -97,7 +107,12 @@ function monAccueil()
 screenfetch
 #echo -e "\e[00;32m $(lsb_release -ds)\e[00;33m $(lsb_release -rs)\e[00m"
 #echo -e "\e[00;32m $(uname -n) \e[00;33m $(uname -o)\e[00m"  
-echo -e "\e[00;31m$(df -h -t ext4 |grep ^/) \e[00m"
+[ "${XDG_VTNR}" -eq "1" ] && echo -e "\e[00;31m$(df -h -t ext4 |grep ^/) \e[00m"
+if [ "${XDG_VTNR}" -gt 1 ]; then
+	echo "Console: ${XDG_VTNR}"
+	PROMPT='%{%f%b%k%}$(RETVAL=$?;prompt_context;prompt_dir;prompt_end)'
+	RPROMPT=''
+fi
 #lsb_release -ds|toilet -f  smblock -F metal;
 #espeak -s 160 -v fr+12 "yo patrick "
 }
